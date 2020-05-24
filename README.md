@@ -14,7 +14,7 @@ This project is done in Kotlin with respectful to Clean Architecture
 Java,Kotlin
 
 
-![Main Screen](https://github.com/reza575/optustest/blob/master/screenshots/optustest.png)
+![Main Screen](https://github.com/reza575/optus test/blob/master/screenshots/OptusTest.png)
 
 
 
