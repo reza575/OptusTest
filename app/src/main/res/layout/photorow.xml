@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="PhotoBinding">
+        <variable
+            name="photoshow"
+            type="com.moeiny.reza.optustest.repository.model.Photo"/>
+        <variable
+            name="itemClickListener"
+            type="com.moeiny.reza.optustest.utils.CustomClickListener"/>
+    </data>
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:onClick="@{() -> itemClickListener.cardClicked2(photoshow)}"
+    android:id="@+id/card_photorow_parent"
+    android:layout_margin="@dimen/recycler_item_margin"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:background="@color/blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_photorow_icon"
+            app:imageUrl="@{photoshow.thumbnailUrl}"
+            android:layout_margin="@dimen/view_margin"
+            android:layout_alignParentLeft="true"
+            android:layout_width="@dimen/photo_size"
+            android:layout_height="@dimen/photo_size"/>
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:layout_margin="@dimen/view_margin"
+            android:id="@+id/txt_photorow_title"
+            android:textSize="22sp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            tools:text="@{photoshow.title}"
+            android:layout_toRightOf="@id/img_photorow_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+
+</layout>
