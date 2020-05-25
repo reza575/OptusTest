@@ -28,25 +28,16 @@ class PhotoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_photo)
-
+        context=this
         viewModel= ViewModelProviders.of(this).get(UsersViewModel::class.java)
         val bundle = intent.extras
-
         albumId=bundle?.getString("albumId").toString()
         var photoShow=PhotoShow(albumId,"","","","")
-
-
-        context=this
-
         mBinding.photoshow=photoShow
-
-
         setUpView()
-
         photoList=viewModel.getPhotoByAlbumId(albumId.toInt())
         setDataOnRecycler()
     }
-
 
 
     fun setDataOnRecycler() {
@@ -56,7 +47,6 @@ class PhotoActivity : AppCompatActivity() {
                photoListTemp.add(photo)
         }
         viewModel.setPhotoList(photoListTemp)
-
 
         recyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
