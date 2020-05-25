@@ -25,7 +25,6 @@ class HomeActivity : AppCompatActivity() {
        * Initialise views
         */
         setViews()
-
         txt_Continue.setOnClickListener {
             setView(rl_loading)
             txt_Continue.text = "Loading..."
@@ -45,16 +44,17 @@ class HomeActivity : AppCompatActivity() {
 
     companion object {
         private lateinit var context:Context
-
         private lateinit var view: ProgressBar
 
-        fun getView(): ProgressBar { return this.view}
-        fun setView(view : ProgressBar) { this.view=view }
-
-        fun setContext(context:Context){
-           this.context=context
+        fun getView(): ProgressBar {
+            return this.view
         }
-
+        fun setView(view : ProgressBar) {
+            this.view=view
+        }
+        fun setContext(context:Context){
+            this.context=context
+        }
         fun move(){
             val intent = Intent(context, MainActivity::class.java)
             context.startActivity(intent)

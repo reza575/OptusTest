@@ -39,7 +39,6 @@ class PhotoActivity : AppCompatActivity() {
         setDataOnRecycler()
     }
 
-
     fun setDataOnRecycler() {
         val photoListTemp = ArrayList<Photo>()
         for(item:PhotoEntity in photoList ){

@@ -30,9 +30,7 @@ class PhotoAdapter(var context: Context, var photoList:List<Photo>): RecyclerVie
 
     override fun onBindViewHolder(holderPhoto: PhotoViewHolder, position: Int) {
         var photo=photoList.get(position)
-
         holderPhoto.bind(photo)
-
         holderPhoto.photoBinding.setItemClickListener(this)
     }
 
@@ -43,7 +41,6 @@ class PhotoAdapter(var context: Context, var photoList:List<Photo>): RecyclerVie
     }
 
     override fun cardClicked(user: UserShow) {
-
        }
 
     override fun cardClicked(photo: Photo) {
@@ -52,7 +49,6 @@ class PhotoAdapter(var context: Context, var photoList:List<Photo>): RecyclerVie
         context!!.startActivity(intent)
     }
 
-
     companion object{
          @JvmStatic
          @BindingAdapter("imageUrl")
@@ -60,6 +56,4 @@ class PhotoAdapter(var context: Context, var photoList:List<Photo>): RecyclerVie
             Picasso.get().load(url).into(view)
          }
     }
-
-
 }

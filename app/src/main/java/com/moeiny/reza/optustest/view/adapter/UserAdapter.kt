@@ -27,7 +27,6 @@ class UserAdapter(var context: Context, var userList:List<UserShow>): RecyclerVi
 
     override fun onBindViewHolder(holderUser: UserViewHolder, position: Int) {
         var user=userList.get(position)
-
         holderUser.bind(user)
         holderUser.userBinding.setItemClickListener(this)
     }
@@ -42,11 +41,8 @@ class UserAdapter(var context: Context, var userList:List<UserShow>): RecyclerVi
         val intent = Intent(context, PhotoActivity::class.java)
         intent.putExtra("albumId", user.id)
         context!!.startActivity(intent)
-
        }
 
     override fun cardClicked(photo: Photo) {
-
     }
-
 }
