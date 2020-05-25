@@ -8,7 +8,7 @@
             type="com.moeiny.reza.optustest.viewmodel.UsersViewModel"/>
     </data>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:id="@+id/rel_fragmentUsers_parent"
         android:background="@color/white"
@@ -18,7 +18,9 @@
 
         <TextView
             android:id="@+id/txt_fragmentUsers_title"
-            android:layout_centerHorizontal="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:textSize="24sp"
             android:text="User Info"
             android:padding="@dimen/view_margin"
@@ -29,12 +31,14 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_fragmentUser_users"
-            android:layout_below="@id/txt_fragmentUsers_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_fragmentUsers_title"
             android:layout_width="match_parent"
             android:paddingBottom="@dimen/txtbutton_Top_margin"
             android:layout_height="wrap_content">
 
         </androidx.recyclerview.widget.RecyclerView>
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

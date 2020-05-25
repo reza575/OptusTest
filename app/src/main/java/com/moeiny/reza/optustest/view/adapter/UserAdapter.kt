@@ -45,7 +45,7 @@ class UserAdapter(var context: Context, var userList:List<UserShow>): RecyclerVi
 
        }
 
-    override fun cardClicked2(photo: Photo) {
+    override fun cardClicked(photo: Photo) {
 
     }
 

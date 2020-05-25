@@ -235,13 +235,13 @@ class UsersRepository(application: Application){
                 * 1 - All the characters details fetch from Api
                 * 2- Create a characterEntity model for each character and save in the Database
                 */
-                for (i in 0..photos!!.size-1) {
-                    var photo = PhotoEntity(
-                        photos[i].id, photos[i].albumId, photos[i].thumbnailUrl,
-                        photos[i].title, photos[i].url
-                    )
 
-                    if (getPhotobyId(photos[i].id) == null)
+                photos?.forEachIndexed { index, photo ->
+                    var photo = PhotoEntity(
+                        photos[index].id, photos[index].albumId, photos[index].thumbnailUrl,
+                        photos[index].title, photos[index].url)
+
+                    if (getPhotobyId(photos[index].id) == null)
                         insertPhoto(photo)
                 }
             }

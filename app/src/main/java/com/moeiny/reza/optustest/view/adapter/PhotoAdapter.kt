@@ -46,7 +46,7 @@ class PhotoAdapter(var context: Context, var photoList:List<Photo>): RecyclerVie
 
        }
 
-    override fun cardClicked2(photo: Photo) {
+    override fun cardClicked(photo: Photo) {
         val intent = Intent(context, ShowActivity::class.java)
         intent.putExtra("photoId", photo.id.toString())
         context!!.startActivity(intent)

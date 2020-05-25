@@ -14,38 +14,41 @@
 
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
-    android:onClick="@{() -> itemClickListener.cardClicked2(photoshow)}"
+    android:onClick="@{() -> itemClickListener.cardClicked(photoshow)}"
     android:id="@+id/card_photorow_parent"
     android:layout_margin="@dimen/recycler_item_margin"
     android:layout_height="wrap_content">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:background="@color/blue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/img_photorow_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:imageUrl="@{photoshow.thumbnailUrl}"
             android:layout_margin="@dimen/view_margin"
-            android:layout_alignParentLeft="true"
             android:layout_width="@dimen/photo_size"
             android:layout_height="@dimen/photo_size"/>
 
         <TextView
-            android:layout_centerVertical="true"
+            android:id="@+id/txt_photorow_title"
+            app:layout_constraintStart_toEndOf="@id/img_photorow_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:textColor="@color/white"
             android:layout_margin="@dimen/view_margin"
-            android:id="@+id/txt_photorow_title"
             android:textSize="22sp"
             android:maxLines="3"
             android:ellipsize="end"
             tools:text="@{photoshow.title}"
-            android:layout_toRightOf="@id/img_photorow_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
 

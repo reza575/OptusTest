@@ -10,6 +10,6 @@ import com.moeiny.reza.optustest.repository.model.UserShow
 
 interface CustomClickListener {
     fun cardClicked(f: UserShow)
-    fun cardClicked2(f: Photo)
+    fun cardClicked(f: Photo)
 
 }
